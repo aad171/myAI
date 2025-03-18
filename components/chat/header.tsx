@@ -16,8 +16,9 @@ export default function ChatHeader({
   clearMessages: () => void;
 }) {
   return (
-    <div className="z-10 flex justify-center items-center fixed top-0 w-full p-5 bg-[#C89C3F] shadow-[0_10px_15px_-3px_rgba(255,255,255,0.5)] rounded-b-2xl">
-      <div className="flex w-full max-w-5xl mx-auto items-center">
+    <div className="z-10 fixed top-0 w-full flex justify-center">
+      {/* This inner container controls the actual width/length of the header */}
+      <div className="flex items-center p-5 bg-[#C89C3F] shadow-[0_10px_15px_-3px_rgba(255,255,255,0.5)] rounded-b-2xl max-w-5xl w-full">
         {/* Left spacer */}
         <div className="flex-0 w-[100px]"></div>
 
@@ -39,8 +40,6 @@ export default function ChatHeader({
             <span>{CLEAR_BUTTON_TEXT}</span>
           </Button>
         </div>
-      </div>
-      <div className="pt-36 max-w-5xl mx-auto">
       </div>
     </div>
   );
