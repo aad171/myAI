@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { EraserIcon } from "lucide-react";
 import Image from "next/image";
-import { CHAT_HEADER, CLEAR_BUTTON_TEXT } from "@/configuration/ui";
+import { CLEAR_BUTTON_TEXT } from "@/configuration/ui";
 import { AI_NAME } from "@/configuration/identity";
 
 export const AILogo = () => (
-  <div className="w-16 h-16 relative"> {/* Increased logo size */}
+  <div className="w-16 h-16 relative"> {/* Bigger logo */}
     <Image src="/ai-logo.png" alt={AI_NAME} width={64} height={64} />
-    <div className="w-3 h-3 rounded-full bg-green-500 absolute -bottom-1 -right-1"></div>
   </div>
 );
 
