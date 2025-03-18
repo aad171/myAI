@@ -17,17 +17,25 @@ export default function ChatHeader({
   clearMessages: () => void;
 }) {
   return (
-    <div className="z-10 flex justify-center items-center fixed top-0 w-full p-5 bg-[#C89C3F] shadow-[0_10px_15px_-3px_rgba(255,255,255,1)]">
-      <div className="flex w-full">
+    <div className="z-10 flex justify-center items-center fixed top-0 w-full p-5 bg-[#C89C3F] shadow-[0_10px_15px_-3px_rgba(255,255,255,0.5)] rounded-b-2xl">
+      <div className="flex w-full max-w-5xl mx-auto items-center">
+        {/* Empty spacer to balance button on the right */}
         <div className="flex-0 w-[100px]"></div>
-        <div className="flex-1 flex justify-center items-center gap-2">
+
+        {/* Centered Logo and Text */}
+        <div className="flex-1 flex justify-center items-center gap-3">
           <AILogo />
-          <p>{CHAT_HEADER}</p>
+          <div className="flex flex-col items-start">
+            <p className="text-2xl font-bold text-white">{AI_NAME}</p>
+            <p className="text-sm text-white/90">{CHAT_HEADER}</p>
+          </div>
         </div>
+
+        {/* Clear Button */}
         <div className="flex-0 w-[100px] flex justify-end items-center">
           <Button
             onClick={clearMessages}
-            className="gap-2 shadow-sm"
+            className="gap-2 shadow-sm bg-white text-black hover:bg-gray-200"
             variant="outline"
             size="sm"
           >
