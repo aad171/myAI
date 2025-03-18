@@ -1,7 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { EraserIcon } from "lucide-react";
 import Image from "next/image";
-import { CLEAR_BUTTON_TEXT } from "@/configuration/ui";
 import { AI_NAME } from "@/configuration/identity";
 
 export const AILogo = () => (
@@ -11,10 +8,8 @@ export const AILogo = () => (
 );
 
 export default function ChatHeader({
-  clearMessages,
-  children, // Accept children to render chat messages below
+  children, // Render chat messages below the header
 }: {
-  clearMessages: () => void;
   children: React.ReactNode;
 }) {
   return (
@@ -22,7 +17,7 @@ export default function ChatHeader({
       {/* Fixed Header */}
       <div className="z-10 flex justify-center items-center fixed top-0 w-full p-5 bg-[#C89C3F] shadow-[0_10px_15px_-3px_rgba(255,255,255,0.5)] rounded-b-2xl">
         <div className="flex w-full max-w-5xl mx-auto items-center">
-          {/* Left spacer */}
+          {/* Spacer for layout balance */}
           <div className="flex-0 w-[100px]"></div>
 
           {/* Center: Logo and AI Name */}
@@ -31,18 +26,8 @@ export default function ChatHeader({
             <p className="text-3xl font-bold text-white">{AI_NAME}</p>
           </div>
 
-          {/* Right: Clear Button */}
-          <div className="flex-0 w-[100px] flex justify-end items-center">
-            <Button
-              onClick={clearMessages}
-              className="gap-2 shadow-sm bg-white text-black hover:bg-gray-200"
-              variant="outline"
-              size="sm"
-            >
-              <EraserIcon className="w-4 h-4" />
-              <span>{CLEAR_BUTTON_TEXT}</span>
-            </Button>
-          </div>
+          {/* Right Spacer to maintain symmetry */}
+          <div className="flex-0 w-[100px]"></div>
         </div>
       </div>
 
