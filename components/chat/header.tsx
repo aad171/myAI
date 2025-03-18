@@ -41,7 +41,6 @@ export default function ChatHeader({
         </div>
       </div>
     </div>
-    <div className="pt-32">  {/* Adjust pt-* value based on your header height */}
-    </div>
+    <div className="pt-32"></div>
   );
 }
